@@ -1,0 +1,96 @@
+---
+title: "Homework 3"
+subtitle: "Psychology 2812B FW22"
+---
+
+# Lab Component
+
+## 1. LGA mean departure delay
+
+Load the `tidyverse` package and the `nycflights` dataset. Note that you will first need to install the nycflights13 dataset:
+
+```{r}
+#| echo: true
+#| eval: false
+install.packages("nycflights13")
+```
+
+```{r}
+#| echo: TRUE
+#| output: FALSE
+library(tidyverse)
+library(nycflights13)
+```
+
+Write R code that outputs the average departure delay and the average arrival delay of flights originating from LGA (La Guardia airport). Hint: use the `%>%` pipe operator together with `filter()` (to select observations with `origin` equal to `"LGA"`) and with `summarise()` to calculate the `mean` of `dep_delay` and the mean of `arr_delay`. Don't forget to set `na.rm=TRUE` to remove missing values.
+
+```{r}
+# your code goes here
+
+```
+
+## 2. LGA departure delay by month
+
+Write R code to calculate the mean arrival delay of flights originating from La Guardia airport for each month of the year.
+
+```{r}
+# your code goes here
+
+```
+
+## 3. Worst carrier at LGA
+
+Write R code to calculate the mean departure delay of flights originating from La Guardia airport, for each Airline (carrier), and sort the output from best to worst.
+
+```{r}
+# your code goes here
+
+```
+
+## 4. Airlines full names
+
+Re-do question 3 above but instead of outputting the two letter carrier abbreviations, instead output the full name of each carrier (from the `airlines` data frame). Hint: see Chapter [13.4 Mutating joins](https://r4ds.had.co.nz/relational-data.html#mutating-joins) for an example of how to join the `airlines` data frame to the `flights` data frame.
+
+```{r}
+# your code goes here
+
+```
+
+# Home Component
+
+## 5. Number of long delays
+
+For all flights originating from La Guardia airport, calculate the number of flights for which the departure delay was greater than 60 minutes, for each carrier. Sort the output from best to worst and output the full name of each carrier. Hint: think about how you can modify your answer to question 4 above.
+
+```{r}
+# your code goes here
+
+```
+
+## 6. Number of flights per airline
+
+Of course the calculation in question 5 above is arguably unfair, as different airlines operate a different number of flights. Calculate the number of flights each airline operates out of La Guardia airport. Output from most to least, and include full carrier names.
+
+```{r}
+# your code goes here
+
+```
+
+## 7. As a proportion
+
+Re-do question 5 and compute the number of flights delayed greater than 60 minutes as a percentage (0-100) of the total number of flights each airline operates out of La Guardia. Output a table with the total number of flights, the number of delays greater than 60 minutes, and the number of delays greater than 60 minutes as a percentage (0-100) of the total number of flights. Sort from best to worst on the 3rd column (delays as a percentage of total number of flights).
+
+```{r}
+# your code goes here
+
+```
+
+## 8. Make a plot
+
+Is there a relationship between the number of flights a carrier operates and the percentage of flights delayed more than 60 minutes? Make a scatterplot with total number of flights on the horizontal axis and percentage of delayed flights on the vertical axis. Add a linear fit but set `se=FALSE` to remove the shaded region representing the confidence interval. Use the `theme_bw` theme. Add a title and x and y labels as shown. Set the `xlim()` to `(-2500,25000)`. Use `geom_text()` to plot the carrier names. Hint 1: in the `aes()` instruction where you specify `x=` and `y=` also specify `label=` as the name of the carrier. Then `geom_text()` knows what to plot. Hint 2: add a space between points and labels by adding `nudge_y = 0.5` to the `geom_text()` instruction. Hint 3: avoid text labels being clipped outside of the range of the plot by adding a `+ coord_cartesian(clip = "off")` instruction to the plot. BTW: these are things one can look up in the `ggplot2` documentation, using google, etc.
+
+```{r}
+# your code goes here
+
+```
+
